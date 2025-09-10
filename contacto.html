@@ -266,10 +266,62 @@
         </div>
     </footer>
 
-    <!-- WhatsApp flotante -->
-    <a href="https://wa.me/573118782505" target="_blank" class="whatsapp-btn">
-        <i class="fab fa-whatsapp fa-lg"></i>
-    </a>
+     <!-- Botón flotante WhatsApp -->
+    <!-- Botón WhatsApp -->
+<a href="https://wa.me/573118782505" target="_blank" class="whatsapp-btn">
+  <i class="fab fa-whatsapp fa-2x"></i>
+</a>
+
+<style>
+.whatsapp-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  color: white;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5), 0 0 20px rgba(37, 211, 102, 0.7);
+  z-index: 999;
+  animation: float 3s ease-in-out infinite, pulse 2s infinite;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.2) rotate(12deg);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.6), 0 0 30px rgba(37, 211, 102, 0.9);
+}
+
+.whatsapp-btn i {
+  animation: glow 1.5s infinite alternate;
+}
+
+/* Animación de flotar */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Pulso expansivo */
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+  70% { box-shadow: 0 0 0 25px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+/* Brillo intermitente en el ícono */
+@keyframes glow {
+  from { text-shadow: 0 0 5px #fff, 0 0 10px #25D366; }
+  to { text-shadow: 0 0 20px #fff, 0 0 30px #25D366; }
+}
+</style>
+
+
 
     <script>
         AOS.init({ duration: 1000, once: true });
