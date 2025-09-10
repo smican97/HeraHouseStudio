@@ -1,562 +1,567 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hera House Studio - Agencia de Modelos Web Cam</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hera House Studio - Agencia de Modelos Web Cam</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <style>
-    body { font-family: 'Poppins', sans-serif; }
-    .hero-bg {
-      background: url('https://images.unsplash.com/photo-1604079622554-7a57a798edc2?auto=format&fit=crop&w=1600&q=80') center/cover;
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        .hero-bg {
+          background: url('https://images.unsplash.com/photo-1604079622554-7a57a798edc2?auto=format&fit=crop&w=1600&q=80') center/cover;
+        }
+        .whatsapp-btn {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          background: #25D366;
+          color: white;
+          border-radius: 50%;
+          width: 60px;
+          height: 60px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+          z-index: 50;
+          transition: transform 0.2s;
+        }
+        .whatsapp-btn:hover { transform: scale(1.1); }
+        .navbar { transition: background 0.3s; }
+        .scrolled { background: rgba(0,0,0,0.9) !important; }
+    	
+    	html, body {
+      overflow-x: hidden;
     }
-    .whatsapp-btn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25D366;
-      color: white;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      z-index: 50;
-      transition: transform 0.2s;
-    }
-    .whatsapp-btn:hover { transform: scale(1.1); }
-    .navbar { transition: background 0.3s; }
-    .scrolled { background: rgba(0,0,0,0.9) !important; }
-	
-	html, body {
-  overflow-x: hidden;
-}
-
-  </style>
+    </style>
 </head>
+
 <body class="bg-black text-white">
-<!-- Navbar -->
-<nav id="navbar" class="fixed w-full top-0 left-0 z-40 navbar bg-transparent">
-  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-    
-    <!-- Logo + Nombre de la empresa -->
-    <a href="#inicio" class="flex items-center space-x-3">
-      <img src="logo.png" alt="Hera House Studio" class="h-10 w-auto">
-      <span class="text-xl font-bold">HeraHouseStudio</span>
-    </a>
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed w-full top-0 left-0 z-40 navbar bg-transparent">
+        <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
 
-    <!-- Menú -->
-    <ul class="hidden md:flex space-x-6 font-medium">
-      <li><a href="index.html" class="hover:text-pink-500">Inicio</a></li>
-      <li><a href="quienessomos.html" class="hover:text-pink-500">Nosotros</a></li>
-      <li><a href="beneficios.html" class="hover:text-pink-500">Beneficios</a></li>
-      <li><a href="#aplica" class="hover:text-pink-500">Proceso</a></li>
-      <li><a href="#testimonios" class="hover:text-pink-500">Testimonios</a></li>
-      <li><a href="#faq" class="hover:text-pink-500">FAQ</a></li>
-      <li><a href="contacto.html" class="hover:text-pink-500">Contacto</a></li>
-    </ul>
-    
-  </div>
-</nav>
+            <!-- Logo + Nombre de la empresa -->
+            <a href="#inicio" class="flex items-center space-x-3">
+                <img src="logo.png" alt="Hera House Studio" class="h-10 w-auto">
+                <span class="text-xl font-bold">HeraHouseStudio</span>
+            </a>
+
+            <!-- Menú -->
+
+            <!-- Botón hamburguesa para móviles -->
+            <button id="menu-btn" class="md:hidden flex items-center px-3 py-2 border rounded text-white border-white">
+                <svg class="fill-current h-6 w-6" viewBox="0 0 20 20">
+                    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+                </svg>
+            </button>
 
 
+            <ul id="menu" class="hidden md:flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0 font-medium bg-gray-900 md:bg-transparent p-6 md:p-0 rounded-lg md:rounded-none absolute md:static top-16 left-0 w-full md:w-auto shadow-lg md:shadow-none">
 
-  <!-- Hero -->
-<section id="inicio" class="hero-bg h-screen flex flex-col justify-center items-center text-center px-6 relative overflow-hidden">
-  <!-- Video de fondo -->
-  <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
-    <!-- 🔹 Aquí pegas la URL de tu video en formato .mp4 -->
-    <source src="https://ajestudios.com/assets/video/video-home.mp4" type="video/mp4">
-    Tu navegador no soporta videos en HTML5.
-  </video>
+                <li><a href="index.html" class="hover:text-pink-500">Inicio</a></li>
+                <li><a href="quienessomos.html" class="hover:text-pink-500">Nosotros</a></li>
+                <li><a href="beneficios.html" class="hover:text-pink-500">Beneficios</a></li>
+                <li><a href="#aplica" class="hover:text-pink-500">Proceso</a></li>
+                <li><a href="#testimonios" class="hover:text-pink-500">Testimonios</a></li>
+                <li><a href="#faq" class="hover:text-pink-500">FAQ</a></li>
+                <li><a href="contacto.html" class="hover:text-pink-500">Contacto</a></li>
+            </ul>
 
-  <!-- Capa oscura encima del video para mejorar contraste -->
-  <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-
-  <!-- Contenido del Hero -->
-  <div class="relative z-10" data-aos="fade-up">
-    <h1 class="text-4xl md:text-6xl font-bold mb-4 text-white">Agencia de Modelos Web Cam</h1>
-    <p class="text-lg md:text-2xl mb-6 text-gray-200">Impulsamos tu carrera con seguridad, confianza y éxito.</p>
-    <div class="space-x-4">
-      <a href="contacto.html" class="bg-pink-600 hover:bg-pink-700 px-6 py-3 rounded-full font-semibold">Aplica como modelo</a>
-      <a href="quienessomos.html" class="bg-transparent border border-white hover:bg-white hover:text-black px-6 py-3 rounded-full font-semibold">Conócenos</a>
-    </div>
-  </div>
-</section>
-
-
-<!-- Quiénes Somos -->
-<section id="nosotros" class="py-20 px-6 md:px-20 bg-gray-900">
-  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-    
-    <!-- Texto -->
-    <div data-aos="fade-right">
-      <h2 class="text-3xl font-bold mb-6">Quiénes Somos</h2>
-      <p class="text-gray-300 text-lg mb-4">
-        Somos una agencia profesional dedicada a <span class="text-pink-500 font-semibold">formar y acompañar a modelos web cam</span> en su camino al éxito.
-      </p>
-      <p class="text-gray-400 text-lg mb-6">
-        Ofrecemos <strong>espacios seguros</strong>, <strong>tecnología de punta</strong> y un <strong>equipo especializado en producción y marketing</strong> para que cada modelo desarrolle su máximo potencial.
-      </p>
-      <a href="contacto.html" class="bg-pink-600 hover:bg-pink-700 px-6 py-3 rounded-full font-semibold">Únete a nosotros</a>
-    </div>
-
-    <!-- Imagen modelo -->
-    <div class="relative text-center" data-aos="fade-left">
-      <img src="https://ajestudios.com/assets/img/models/home/ajstudios.webp" 
-           alt="Modelo Webcam" 
-		    style="width:50%"
-           class="rounded-2xl shadow-lg object-cover mx-auto max-w-sm">
-      <!-- Puedes reemplazar el src por la foto de tu modelo -->
-    </div>
-  </div>
-</section>
+        </div>
+    </nav>
 
 
 
+    <!-- Hero -->
+    <section id="inicio" class="hero-bg h-screen flex flex-col justify-center items-center text-center px-6 relative overflow-hidden">
+        <!-- Video de fondo -->
+        <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
+            <!-- 🔹 Aquí pegas la URL de tu video en formato .mp4 -->
+            <source src="https://ajestudios.com/assets/video/video-home.mp4" type="video/mp4"> Tu navegador no soporta videos en HTML5.
+        </video>
 
-<!-- Beneficios -->
-<section id="beneficios" class="py-20 px-6 md:px-20">
-  <h2 class="text-3xl md:text-3xl font-bold text-center mb-12 text-white" data-aos="fade-up">
+        <!-- Capa oscura encima del video para mejorar contraste -->
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+        <!-- Contenido del Hero -->
+        <div class="relative z-10" data-aos="fade-up">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 text-white">Agencia de Modelos Web Cam</h1>
+            <p class="text-lg md:text-2xl mb-6 text-gray-200">Impulsamos tu carrera con seguridad, confianza y éxito.</p>
+            <div class="space-x-4">
+                <a href="contacto.html" class="bg-pink-600 hover:bg-pink-700 px-6 py-3 rounded-full font-semibold">Aplica como modelo</a>
+                <a href="quienessomos.html" class="bg-transparent border border-white hover:bg-white hover:text-black px-6 py-3 rounded-full font-semibold">Conócenos</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Quiénes Somos -->
+    <section id="nosotros" class="py-20 px-6 md:px-20 bg-gray-900">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+
+            <!-- Texto -->
+            <div data-aos="fade-right">
+                <h2 class="text-3xl font-bold mb-6">Quiénes Somos</h2>
+                <p class="text-gray-300 text-lg mb-4">
+                    Somos una agencia profesional dedicada a <span class="text-pink-500 font-semibold">formar y acompañar a modelos web cam</span> en su camino al éxito.
+                </p>
+                <p class="text-gray-400 text-lg mb-6">
+                    Ofrecemos <strong>espacios seguros</strong>, <strong>tecnología de punta</strong> y un <strong>equipo especializado en producción y marketing</strong> para que cada modelo desarrolle su máximo potencial.
+                </p>
+                <a href="contacto.html" class="bg-pink-600 hover:bg-pink-700 px-6 py-3 rounded-full font-semibold">Únete a nosotros</a>
+            </div>
+
+            <!-- Imagen modelo -->
+            <div class="relative text-center" data-aos="fade-left">
+                <img src="https://ajestudios.com/assets/img/models/home/ajstudios.webp" alt="Modelo Webcam" style="width:50%" class="rounded-2xl shadow-lg object-cover mx-auto max-w-sm">
+                <!-- Puedes reemplazar el src por la foto de tu modelo -->
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Beneficios -->
+    <section id="beneficios" class="py-20 px-6 md:px-20">
+        <h2 class="text-3xl md:text-3xl font-bold text-center mb-12 text-white" data-aos="fade-up">
     Beneficios de trabajar con nosotros
   </h2>
 
-  <!-- Grid de beneficios -->
-  <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
-    <!-- Beneficio 1 -->
-    <div class="bg-gray-800 p-8 rounded-2xl shadow-lg text-center benefit-card" data-aos="zoom-in">
-      <div class="icon-bg mx-auto text-white"><i class="fas fa-chalkboard-teacher"></i></div>
-      <h3 class="text-xl font-semibold mb-2 text-white">Entrenamiento y apoyo</h3>
-      <p class="text-gray-400">Te brindamos capacitación constante y asesoría personalizada.</p>
-    </div>
+        <!-- Grid de beneficios -->
+        <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+            <!-- Beneficio 1 -->
+            <div class="bg-gray-800 p-8 rounded-2xl shadow-lg text-center benefit-card" data-aos="zoom-in">
+                <div class="icon-bg mx-auto text-white"><i class="fas fa-chalkboard-teacher"></i></div>
+                <h3 class="text-xl font-semibold mb-2 text-white">Entrenamiento y apoyo</h3>
+                <p class="text-gray-400">Te brindamos capacitación constante y asesoría personalizada.</p>
+            </div>
 
-    <!-- Beneficio 2 -->
-    <div class="bg-gray-800 p-8 rounded-2xl shadow-lg text-center benefit-card" data-aos="zoom-in" data-aos-delay="150">
-      <div class="icon-bg mx-auto text-white"><i class="fas fa-dollar-sign"></i></div>
-      <h3 class="text-xl font-semibold mb-2 text-white">Pagos puntuales</h3>
-      <p class="text-gray-400">Garantizamos ingresos competitivos y pagos a tiempo.</p>
-    </div>
+            <!-- Beneficio 2 -->
+            <div class="bg-gray-800 p-8 rounded-2xl shadow-lg text-center benefit-card" data-aos="zoom-in" data-aos-delay="150">
+                <div class="icon-bg mx-auto text-white"><i class="fas fa-dollar-sign"></i></div>
+                <h3 class="text-xl font-semibold mb-2 text-white">Pagos puntuales</h3>
+                <p class="text-gray-400">Garantizamos ingresos competitivos y pagos a tiempo.</p>
+            </div>
 
-    <!-- Beneficio 3 -->
-    <div class="bg-gray-800 p-8 rounded-2xl shadow-lg text-center benefit-card" data-aos="zoom-in" data-aos-delay="300">
-      <div class="icon-bg mx-auto text-white"><i class="fas fa-shield-alt"></i></div>
-      <h3 class="text-xl font-semibold mb-2 text-white">Ambiente seguro</h3>
-      <p class="text-gray-400">Espacios cómodos y tecnología de última generación.</p>
-    </div>
-  </div>
+            <!-- Beneficio 3 -->
+            <div class="bg-gray-800 p-8 rounded-2xl shadow-lg text-center benefit-card" data-aos="zoom-in" data-aos-delay="300">
+                <div class="icon-bg mx-auto text-white"><i class="fas fa-shield-alt"></i></div>
+                <h3 class="text-xl font-semibold mb-2 text-white">Ambiente seguro</h3>
+                <p class="text-gray-400">Espacios cómodos y tecnología de última generación.</p>
+            </div>
+        </div>
 
-  <!-- Botón Ver más -->
-  <div class="text-center mt-12" data-aos="zoom-in" data-aos-delay="150">
-    <a href="beneficios.html" 
-       class="bg-pink-600 hover:bg-pink-700 px-8 py-3 rounded-full font-semibold text-white transition">
+        <!-- Botón Ver más -->
+        <div class="text-center mt-12" data-aos="zoom-in" data-aos-delay="150">
+            <a href="beneficios.html" class="bg-pink-600 hover:bg-pink-700 px-8 py-3 rounded-full font-semibold text-white transition">
       Ver más beneficios
     </a>
-  </div>
-</section>
+        </div>
+    </section>
 
-<!-- Estilos para iconos y animación hover -->
-<style>
-  .benefit-card {
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  .benefit-card:hover {
-    transform: translateY(-10px) scale(1.03);
-    box-shadow: 0 20px 40px rgba(255,0,150,0.3);
-  }
-  .icon-bg {
-    background: linear-gradient(135deg, #ec4899, #f43f5e);
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-  }
-</style>
+    <!-- Estilos para iconos y animación hover -->
+    <style>
+        .benefit-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+          }
+          .benefit-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 20px 40px rgba(255,0,150,0.3);
+          }
+          .icon-bg {
+            background: linear-gradient(135deg, #ec4899, #f43f5e);
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+          }
+    </style>
 
-<!-- AOS -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<script>
-  AOS.init({ duration: 1000, once: true });
-</script>
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
 
 
-<!-- Proceso de aplicación -->
-<section id="aplica" class="py-20 px-6 md:px-20 bg-gray-900">
-  <!-- Título -->
-  <div class="text-center max-w-3xl mx-auto mb-12">
-    <h2 class="text-3xl font-bold text-white mb-4" data-aos="fade-up">
+    <!-- Proceso de aplicación -->
+    <section id="aplica" class="py-20 px-6 md:px-20 bg-gray-900">
+        <!-- Título -->
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <h2 class="text-3xl font-bold text-white mb-4" data-aos="fade-up">
       Proceso de aplicación
     </h2>
-    <p class="text-gray-400 text-lg" data-aos="fade-up" data-aos-delay="150">
-      Es muy fácil iniciar tu camino con nosotros. Sigue estos simples pasos y 
-      da el primer paso hacia tu independencia y éxito como modelo profesional.
-    </p>
-  </div>
+            <p class="text-gray-400 text-lg" data-aos="fade-up" data-aos-delay="150">
+                Es muy fácil iniciar tu camino con nosotros. Sigue estos simples pasos y da el primer paso hacia tu independencia y éxito como modelo profesional.
+            </p>
+        </div>
 
-  <!-- Contenido en 2 columnas -->
-  <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto items-center">
-    
-    <!-- Imagen -->
-    <div class="relative rounded-2xl overflow-hidden shadow-lg" data-aos="fade-right">
-      <img src="https://innovationmodels.co/wp-content/webp-express/webp-images/uploads/2024/06/agencias-webcam-pereira-2.jpg.webp" 
-           alt="Modelo Webcam" 
-           class="object-cover w-full h-full">
-      <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-    </div>
+        <!-- Contenido en 2 columnas -->
+        <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto items-center">
 
-    <!-- Pasos -->
-    <div class="space-y-8" data-aos="fade-left">
-      <!-- Paso 1 -->
-      <div class="flex items-start space-x-4 hover:scale-105 transition transform">
-        <div class="bg-pink-600 text-white w-14 h-14 flex items-center justify-center rounded-full font-bold shadow-lg">1</div>
-        <p class="text-gray-300 mt-2">
-          Completa el formulario 
-          <a href="contacto.html" class="text-pink-500 font-semibold underline hover:text-pink-400">aquí</a>.
-        </p>
-      </div>
-      <!-- Paso 2 -->
-      <div class="flex items-start space-x-4 hover:scale-105 transition transform">
-        <div class="bg-pink-600 text-white w-14 h-14 flex items-center justify-center rounded-full font-bold shadow-lg">2</div>
-        <p class="text-gray-300 mt-2">Participa en una entrevista personalizada.</p>
-      </div>
-      <!-- Paso 3 -->
-      <div class="flex items-start space-x-4 hover:scale-105 transition transform">
-        <div class="bg-pink-600 text-white w-14 h-14 flex items-center justify-center rounded-full font-bold shadow-lg">3</div>
-        <p class="text-gray-300 mt-2">Recibe tu entrenamiento inicial con nuestro equipo.</p>
-      </div>
-      <!-- Paso 4 -->
-      <div class="flex items-start space-x-4 hover:scale-105 transition transform">
-        <div class="bg-pink-600 text-white w-14 h-14 flex items-center justify-center rounded-full font-bold shadow-lg">4</div>
-        <p class="text-gray-300 mt-2">Empieza a trabajar y gana desde tu primer día.</p>
-      </div>
-    </div>
+            <!-- Imagen -->
+            <div class="relative rounded-2xl overflow-hidden shadow-lg" data-aos="fade-right">
+                <img src="https://innovationmodels.co/wp-content/webp-express/webp-images/uploads/2024/06/agencias-webcam-pereira-2.jpg.webp" alt="Modelo Webcam" class="object-cover w-full h-full">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+            </div>
 
-  </div>
-</section>
+            <!-- Pasos -->
+            <div class="space-y-8" data-aos="fade-left">
+                <!-- Paso 1 -->
+                <div class="flex items-start space-x-4 hover:scale-105 transition transform">
+                    <div class="bg-pink-600 text-white w-14 h-14 flex items-center justify-center rounded-full font-bold shadow-lg">1</div>
+                    <p class="text-gray-300 mt-2">
+                        Completa el formulario
+                        <a href="contacto.html" class="text-pink-500 font-semibold underline hover:text-pink-400">aquí</a>.
+                    </p>
+                </div>
+                <!-- Paso 2 -->
+                <div class="flex items-start space-x-4 hover:scale-105 transition transform">
+                    <div class="bg-pink-600 text-white w-14 h-14 flex items-center justify-center rounded-full font-bold shadow-lg">2</div>
+                    <p class="text-gray-300 mt-2">Participa en una entrevista personalizada.</p>
+                </div>
+                <!-- Paso 3 -->
+                <div class="flex items-start space-x-4 hover:scale-105 transition transform">
+                    <div class="bg-pink-600 text-white w-14 h-14 flex items-center justify-center rounded-full font-bold shadow-lg">3</div>
+                    <p class="text-gray-300 mt-2">Recibe tu entrenamiento inicial con nuestro equipo.</p>
+                </div>
+                <!-- Paso 4 -->
+                <div class="flex items-start space-x-4 hover:scale-105 transition transform">
+                    <div class="bg-pink-600 text-white w-14 h-14 flex items-center justify-center rounded-full font-bold shadow-lg">4</div>
+                    <p class="text-gray-300 mt-2">Empieza a trabajar y gana desde tu primer día.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
 
 
-  <!-- Testimonios -->
-<section id="testimonios" class="py-20 px-6 md:px-20 ">
-  <div class="max-w-6xl mx-auto text-center mb-12">
-    <h2 class="text-3xl md:text-3xl font-bold mb-4 text-white" data-aos="fade-up">
+    <!-- Testimonios -->
+    <section id="testimonios" class="py-20 px-6 md:px-20 ">
+        <div class="max-w-6xl mx-auto text-center mb-12">
+            <h2 class="text-3xl md:text-3xl font-bold mb-4 text-white" data-aos="fade-up">
       Historias de éxito
     </h2>
-    <p class="text-gray-400 max-w-2xl mx-auto text-lg" data-aos="fade-up" data-aos-delay="100">
-      Conoce la experiencia de quienes confiaron en nosotros y alcanzaron sus metas dentro de la industria.
-    </p>
-  </div>
+            <p class="text-gray-400 max-w-2xl mx-auto text-lg" data-aos="fade-up" data-aos-delay="100">
+                Conoce la experiencia de quienes confiaron en nosotros y alcanzaron sus metas dentro de la industria.
+            </p>
+        </div>
 
-  <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-    <!-- Testimonio 1 -->
-    <div class="bg-gray-800 p-8 rounded-2xl shadow-lg relative overflow-hidden transition-transform hover:-translate-y-2 hover:shadow-2xl" data-aos="fade-right">
-      <div class="absolute top-4 left-4 text-pink-500 text-4xl opacity-20">“</div>
-      <p class="italic text-gray-300 mb-6 relative z-10">
-        Gracias a la agencia logré independencia financiera en pocos meses, siempre me sentí segura y apoyada.
-      </p>
-      <div class="flex items-center relative z-10 mt-4">
-        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Ana M." class="w-12 h-12 rounded-full mr-4 border-2 border-pink-500">
-        <h4 class="font-semibold text-white">– Ana M.</h4>
-      </div>
-    </div>
+        <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <!-- Testimonio 1 -->
+            <div class="bg-gray-800 p-8 rounded-2xl shadow-lg relative overflow-hidden transition-transform hover:-translate-y-2 hover:shadow-2xl" data-aos="fade-right">
+                <div class="absolute top-4 left-4 text-pink-500 text-4xl opacity-20">“</div>
+                <p class="italic text-gray-300 mb-6 relative z-10">
+                    Gracias a la agencia logré independencia financiera en pocos meses, siempre me sentí segura y apoyada.
+                </p>
+                <div class="flex items-center relative z-10 mt-4">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Ana M." class="w-12 h-12 rounded-full mr-4 border-2 border-pink-500">
+                    <h4 class="font-semibold text-white">– Ana M.</h4>
+                </div>
+            </div>
 
-    <!-- Testimonio 2 -->
-    <div class="bg-gray-800 p-8 rounded-2xl shadow-lg relative overflow-hidden transition-transform hover:-translate-y-2 hover:shadow-2xl" data-aos="fade-left">
-      <div class="absolute top-4 left-4 text-pink-500 text-4xl opacity-20">“</div>
-      <p class="italic text-gray-300 mb-6 relative z-10">
-        Entré sin experiencia y ahora soy una de las top de la plataforma, con la guía del equipo todo fue más fácil.
-      </p>
-      <div class="flex items-center relative z-10 mt-4">
-        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Laura R." class="w-12 h-12 rounded-full mr-4 border-2 border-pink-500">
-        <h4 class="font-semibold text-white">– Laura R.</h4>
-      </div>
-    </div>
-  </div>
-</section>
+            <!-- Testimonio 2 -->
+            <div class="bg-gray-800 p-8 rounded-2xl shadow-lg relative overflow-hidden transition-transform hover:-translate-y-2 hover:shadow-2xl" data-aos="fade-left">
+                <div class="absolute top-4 left-4 text-pink-500 text-4xl opacity-20">“</div>
+                <p class="italic text-gray-300 mb-6 relative z-10">
+                    Entré sin experiencia y ahora soy una de las top de la plataforma, con la guía del equipo todo fue más fácil.
+                </p>
+                <div class="flex items-center relative z-10 mt-4">
+                    <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Laura R." class="w-12 h-12 rounded-full mr-4 border-2 border-pink-500">
+                    <h4 class="font-semibold text-white">– Laura R.</h4>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- Páginas con las que trabajamos -->
-<section id="paginas" class="py-20 px-6 md:px-20 bg-gradient-to-b from-gray-900 via-gray-950 to-gray-900">
-  <div class="max-w-6xl mx-auto text-center mb-12">
-    <h2 class="text-3xl md:text-3xl font-bold mb-4 text-white" data-aos="fade-up">
+    <!-- Páginas con las que trabajamos -->
+    <section id="paginas" class="py-20 px-6 md:px-20 bg-gradient-to-b from-gray-900 via-gray-950 to-gray-900">
+        <div class="max-w-6xl mx-auto text-center mb-12">
+            <h2 class="text-3xl md:text-3xl font-bold mb-4 text-white" data-aos="fade-up">
       Páginas con las que trabajamos
     </h2>
-    <p class="text-gray-400 mt-2 md:mt-4 max-w-2xl mx-auto text-lg" data-aos="fade-up" data-aos-delay="100">
-      Colaboramos con las plataformas de transmisión más reconocidas del mundo para que tengas la mejor exposición y maximices tus ganancias.
-    </p>
-  </div>
+            <p class="text-gray-400 mt-2 md:mt-4 max-w-2xl mx-auto text-lg" data-aos="fade-up" data-aos-delay="100">
+                Colaboramos con las plataformas de transmisión más reconocidas del mundo para que tengas la mejor exposición y maximices tus ganancias.
+            </p>
+        </div>
 
-  <!-- Logos -->
-  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-10 items-center max-w-5xl mx-auto">
-    <div data-aos="zoom-in" class="transition transform hover:scale-110 hover:shadow-lg">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Chaturbate_logo.svg/1024px-Chaturbate_logo.svg.png" 
-           alt="Chaturbate" 
-           class="mx-auto h-20 object-contain">
-    </div>
-    <div data-aos="zoom-in" data-aos-delay="100" class="transition transform hover:scale-110 hover:shadow-lg">
-      <img src="https://stripchat.com/blog/content/images/2021/04/logo-1.svg" 
-           alt="StripChat" 
-           class="mx-auto h-20 object-contain">
-    </div>
-    <div data-aos="zoom-in" data-aos-delay="200" class="transition transform hover:scale-110 hover:shadow-lg">
-      <img src="https://i.postimg.cc/bNDrYK8s/cam4.png" 
-           alt="Cam4" 
-           class="mx-auto h-20 object-contain">
-    </div>
-    <div data-aos="zoom-in" data-aos-delay="300" class="transition transform hover:scale-110 hover:shadow-lg">
-      <img src="https://webcamm.org/wp-content/uploads/2023/01/CamSoda-logo-removebg-preview-11.png" 
-           alt="Xlove" 
-           class="mx-auto h-20 object-contain">
-    </div>
-    <div data-aos="zoom-in" data-aos-delay="400" class="transition transform hover:scale-110 hover:shadow-lg">
-      <img src="https://i.postimg.cc/MHc6TjCh/stream.png" 
-           alt="Streamate" 
-           class="mx-auto h-20 object-contain">
-    </div>
-  </div>
-</section>
+        <!-- Logos -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-10 items-center max-w-5xl mx-auto">
+            <div data-aos="zoom-in" class="transition transform hover:scale-110 hover:shadow-lg">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Chaturbate_logo.svg/1024px-Chaturbate_logo.svg.png" alt="Chaturbate" class="mx-auto h-20 object-contain">
+            </div>
+            <div data-aos="zoom-in" data-aos-delay="100" class="transition transform hover:scale-110 hover:shadow-lg">
+                <img src="https://stripchat.com/blog/content/images/2021/04/logo-1.svg" alt="StripChat" class="mx-auto h-20 object-contain">
+            </div>
+            <div data-aos="zoom-in" data-aos-delay="200" class="transition transform hover:scale-110 hover:shadow-lg">
+                <img src="https://i.postimg.cc/bNDrYK8s/cam4.png" alt="Cam4" class="mx-auto h-20 object-contain">
+            </div>
+            <div data-aos="zoom-in" data-aos-delay="300" class="transition transform hover:scale-110 hover:shadow-lg">
+                <img src="https://webcamm.org/wp-content/uploads/2023/01/CamSoda-logo-removebg-preview-11.png" alt="Xlove" class="mx-auto h-20 object-contain">
+            </div>
+            <div data-aos="zoom-in" data-aos-delay="400" class="transition transform hover:scale-110 hover:shadow-lg">
+                <img src="https://i.postimg.cc/MHc6TjCh/stream.png" alt="Streamate" class="mx-auto h-20 object-contain">
+            </div>
+        </div>
+    </section>
 
 
 
-<!-- Preguntas Frecuentes -->
-<section id="faq" class="py-20 px-6 md:px-20">
-  <div class="max-w-4xl mx-auto text-center mb-12">
-    <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">
+    <!-- Preguntas Frecuentes -->
+    <section id="faq" class="py-20 px-6 md:px-20">
+        <div class="max-w-4xl mx-auto text-center mb-12">
+            <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">
       Preguntas Frecuentes
     </h2>
-    <p class="text-gray-400 mt-4" data-aos="fade-up" data-aos-delay="100">
-      Resolvemos las dudas más comunes para que tengas claridad antes de aplicar.
-    </p>
-  </div>
+            <p class="text-gray-400 mt-4" data-aos="fade-up" data-aos-delay="100">
+                Resolvemos las dudas más comunes para que tengas claridad antes de aplicar.
+            </p>
+        </div>
 
-  <div class="max-w-3xl mx-auto space-y-6">
-    <!-- Item 1 -->
-<details class="group bg-gray-800 p-6 rounded-2xl shadow-lg transition transform hover:scale-[1.01]" data-aos="fade-up" data-aos-delay="100">
-  <summary class="cursor-pointer font-semibold text-white flex items-center justify-between ">
-    <span>¿Necesito experiencia previa?</span>
-    <span class="transition-transform group-open:rotate-180 text-pink-500 text-xl">⌄</span>
-  </summary>
-  
-  <div class="mt-4 text-gray-300 space-y-3 leading-relaxed">
-    <p>No te preocupes, nosotros te capacitamos en todo lo necesario para que empieces con confianza. Hacemos capacitaciones individuales y personalizadas según la necesidad de cada modelo:</p>
-    
-    <ul class="list-disc list-inside space-y-2 text-gray-400">
-      <li>Capacitación inicial sobre manejo de la página asignada</li>
-      <li>Capacitación de expresión corporal</li>
-      <li>Capacitación vocabulario y abreviaturas básicas de inglés</li>
-      <li>Capacitación música ideal para la transmisión y shows</li>
-      <li>Capacitación de show de fetiches</li>
-      <li>Capacitación show pantimedias</li>
-      <li>Capacitación show sucios</li>
-    </ul>
+        <div class="max-w-3xl mx-auto space-y-6">
+            <!-- Item 1 -->
+            <details class="group bg-gray-800 p-6 rounded-2xl shadow-lg transition transform hover:scale-[1.01]" data-aos="fade-up" data-aos-delay="100">
+                <summary class="cursor-pointer font-semibold text-white flex items-center justify-between ">
+                    <span>¿Necesito experiencia previa?</span>
+                    <span class="transition-transform group-open:rotate-180 text-pink-500 text-xl">⌄</span>
+                </summary>
 
-    <p class="mt-2">
-      <span class="text-pink-500 font-semibold mt-2">¡IMPORTANTE!</span> Estas son algunas de las capacitaciones que manejamos. Adicionalmente, realizamos capacitaciones y retroalimentaciones personalizadas dependiendo del perfil y la necesidad de cada modelo.
-    </p>
-  </div>
-</details>
+                <div class="mt-4 text-gray-300 space-y-3 leading-relaxed">
+                    <p>No te preocupes, nosotros te capacitamos en todo lo necesario para que empieces con confianza. Hacemos capacitaciones individuales y personalizadas según la necesidad de cada modelo:</p>
 
+                    <ul class="list-disc list-inside space-y-2 text-gray-400">
+                        <li>Capacitación inicial sobre manejo de la página asignada</li>
+                        <li>Capacitación de expresión corporal</li>
+                        <li>Capacitación vocabulario y abreviaturas básicas de inglés</li>
+                        <li>Capacitación música ideal para la transmisión y shows</li>
+                        <li>Capacitación de show de fetiches</li>
+                        <li>Capacitación show pantimedias</li>
+                        <li>Capacitación show sucios</li>
+                    </ul>
 
-    <!-- Item 2 -->
- 
-
-    <!-- Item 3: ¿Cómo son los pagos? -->
-<details class="group bg-gray-800 p-6 rounded-2xl shadow-lg transition transform hover:scale-[1.02]" data-aos="fade-up" data-aos-delay="200">
-  <summary class="cursor-pointer font-semibold text-white flex items-center justify-between">
-    <span>¿Cómo son los pagos?</span>
-    <span class="transition-transform group-open:rotate-180 text-pink-500 text-xl">⌄</span>
-  </summary>
-  
-  <div class="mt-4 text-gray-300 space-y-3 leading-relaxed">
-    <p>
-      Los pagos son <span class="text-pink-500 font-semibold">puntuales y transparentes</span>, con varias opciones disponibles según tu preferencia.
-    </p>
-    
-    <p class="font-semibold text-white mt-2">Opciones de pago:</p>
-    
-    <ul class="list-disc list-inside space-y-2 text-gray-400">
-      <li>
-        <span class="font-semibold text-pink-500">Sueldo Fijo:</span> $1.425.000 COP (Se paga mensual, mes vencido, los primeros 5 días de cada mes) + 20% al 30% de las ganancias totales que factures (pagos semanales máximo martes de cada semana).
-      </li>
-      <li>
-        <span class="font-semibold text-pink-500">Sueldo Variable:</span> 60% al 75% de las ganancias totales que factures (pagos semanales máximo martes de cada semana).
-      </li>
-    </ul>
-
-    <p class="text-gray-300 mt-2 italic">
-      <span class="text-pink-500 font-semibold mt-2">Nota:</span> La opción que elijas la puedes cambiar mensualmente según tu preferencia.
-    </p>
-  </div>
-</details>
-
-<!--Horarios flexibles -->
-<details class="group bg-gray-800 p-6 rounded-2xl shadow-lg transition transform hover:scale-[1.02]" data-aos="fade-up" data-aos-delay="300">
-  <summary class="cursor-pointer font-semibold text-white flex items-center justify-between">
-    <span>¿Cuáles son los horarios de trabajo?</span>
-    <span class="transition-transform group-open:rotate-180 text-pink-500 text-xl">⌄</span>
-  </summary>
-  
-  <div class="mt-4 text-gray-300 space-y-3 leading-relaxed">
-    <p>Manejamos horarios flexibles de lunes a viernes en los siguientes turnos:</p>
-    
-    <ul class="list-disc list-inside space-y-2 text-gray-400">
-      <li>
-        <span class="font-semibold text-pink-500">Turno de la mañana:</span> 7:00 am a 2:00 pm (6 horas de transmisión)
-      </li>
-      <li>
-        <span class="font-semibold text-pink-500">Turno de la tarde:</span> 2:00 pm a 9:00 pm (6 horas de transmisión)
-      </li>
-      <li>
-        <span class="font-semibold text-pink-500">Turno de la noche:</span> 9:00 pm a 6:00 am (8 horas de transmisión)
-      </li>
-    </ul>
-
-    <p class="mt-2">
-      <span class="text-pink-500 font-semibold mt-2">¡IMPORTANTE!</span> Las modelos del turno de la noche tienen un <span class="underline ">incremento del 10% en ganancias</span> dependiendo de la opción de pago que elijan.
-    </p>
-  </div>
-</details>
-
-   <details class="group bg-gray-800 p-6 rounded-2xl shadow-lg transition transform hover:scale-[1.01]" data-aos="fade-up" data-aos-delay="400">
-      <summary class="cursor-pointer font-semibold text-white flex items-center justify-between">
-        <span>¿Qué edad mínima se requiere?</span>
-    <span class="transition-transform group-open:rotate-180 text-pink-500 text-xl">⌄</span>
-      </summary>
-      <p class="text-gray-400 mt-3 leading-relaxed">
-        Debes ser mayor de 18 años y contar con un documento de identidad válido.
-      </p>
-    </details>
-
-  </div>
-</section>
+                    <p class="mt-2">
+                        <span class="text-pink-500 font-semibold mt-2">¡IMPORTANTE!</span> Estas son algunas de las capacitaciones que manejamos. Adicionalmente, realizamos capacitaciones y retroalimentaciones personalizadas dependiendo del perfil y la
+                        necesidad de cada modelo.
+                    </p>
+                </div>
+            </details>
 
 
+            <!-- Item 2 -->
 
 
-<!-- Contacto -->
-<section id="contacto" class="py-20 px-6 md:px-20 bg-gray-900">
-  <!-- Título -->
-  <h2 class="text-3xl font-bold mb-12 text-center text-white" data-aos="fade-up">Contacto</h2>
+            <!-- Item 3: ¿Cómo son los pagos? -->
+            <details class="group bg-gray-800 p-6 rounded-2xl shadow-lg transition transform hover:scale-[1.02]" data-aos="fade-up" data-aos-delay="200">
+                <summary class="cursor-pointer font-semibold text-white flex items-center justify-between">
+                    <span>¿Cómo son los pagos?</span>
+                    <span class="transition-transform group-open:rotate-180 text-pink-500 text-xl">⌄</span>
+                </summary>
 
-  <!-- Contenido en dos columnas -->
-  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-    
-    <!-- Texto -->
-    <div class="text-center md:text-left space-y-6" data-aos="fade-right">
-      <p class="text-gray-300 text-lg">
-        ¿Lista para empezar tu carrera como <span class="text-pink-500 font-semibold">modelo webcam profesional</span>? 
-        Este es el momento perfecto para dar el primer paso hacia tu independencia financiera y personal.
-      </p>
-      <p class="text-gray-400">
-        En nuestra agencia tendrás el respaldo de un equipo especializado, espacios seguros y la mejor 
-        tecnología para que trabajes con confianza. <br><br>
-        Escríbenos y descubre cómo podemos ayudarte a construir tu futuro.
-      </p>
+                <div class="mt-4 text-gray-300 space-y-3 leading-relaxed">
+                    <p>
+                        Los pagos son <span class="text-pink-500 font-semibold">puntuales y transparentes</span>, con varias opciones disponibles según tu preferencia.
+                    </p>
 
-      <!-- Botón WhatsApp al final -->
-      <a href="https://wa.me/573118782505" target="_blank"
-         class="bg-green-500 hover:bg-green-600 px-8 py-4 rounded-full font-semibold text-white shadow-lg transition inline-block mt-6">
+                    <p class="font-semibold text-white mt-2">Opciones de pago:</p>
+
+                    <ul class="list-disc list-inside space-y-2 text-gray-400">
+                        <li>
+                            <span class="font-semibold text-pink-500">Sueldo Fijo:</span> $1.425.000 COP (Se paga mensual, mes vencido, los primeros 5 días de cada mes) + 20% al 30% de las ganancias totales que factures (pagos semanales máximo martes
+                            de cada semana).
+                        </li>
+                        <li>
+                            <span class="font-semibold text-pink-500">Sueldo Variable:</span> 60% al 75% de las ganancias totales que factures (pagos semanales máximo martes de cada semana).
+                        </li>
+                    </ul>
+
+                    <p class="text-gray-300 mt-2 italic">
+                        <span class="text-pink-500 font-semibold mt-2">Nota:</span> La opción que elijas la puedes cambiar mensualmente según tu preferencia.
+                    </p>
+                </div>
+            </details>
+
+            <!--Horarios flexibles -->
+            <details class="group bg-gray-800 p-6 rounded-2xl shadow-lg transition transform hover:scale-[1.02]" data-aos="fade-up" data-aos-delay="300">
+                <summary class="cursor-pointer font-semibold text-white flex items-center justify-between">
+                    <span>¿Cuáles son los horarios de trabajo?</span>
+                    <span class="transition-transform group-open:rotate-180 text-pink-500 text-xl">⌄</span>
+                </summary>
+
+                <div class="mt-4 text-gray-300 space-y-3 leading-relaxed">
+                    <p>Manejamos horarios flexibles de lunes a viernes en los siguientes turnos:</p>
+
+                    <ul class="list-disc list-inside space-y-2 text-gray-400">
+                        <li>
+                            <span class="font-semibold text-pink-500">Turno de la mañana:</span> 7:00 am a 2:00 pm (6 horas de transmisión)
+                        </li>
+                        <li>
+                            <span class="font-semibold text-pink-500">Turno de la tarde:</span> 2:00 pm a 9:00 pm (6 horas de transmisión)
+                        </li>
+                        <li>
+                            <span class="font-semibold text-pink-500">Turno de la noche:</span> 9:00 pm a 6:00 am (8 horas de transmisión)
+                        </li>
+                    </ul>
+
+                    <p class="mt-2">
+                        <span class="text-pink-500 font-semibold mt-2">¡IMPORTANTE!</span> Las modelos del turno de la noche tienen un <span class="underline ">incremento del 10% en ganancias</span> dependiendo de la opción de pago que elijan.
+                    </p>
+                </div>
+            </details>
+
+            <details class="group bg-gray-800 p-6 rounded-2xl shadow-lg transition transform hover:scale-[1.01]" data-aos="fade-up" data-aos-delay="400">
+                <summary class="cursor-pointer font-semibold text-white flex items-center justify-between">
+                    <span>¿Qué edad mínima se requiere?</span>
+                    <span class="transition-transform group-open:rotate-180 text-pink-500 text-xl">⌄</span>
+                </summary>
+                <p class="text-gray-400 mt-3 leading-relaxed">
+                    Debes ser mayor de 18 años y contar con un documento de identidad válido.
+                </p>
+            </details>
+
+        </div>
+    </section>
+
+
+
+
+    <!-- Contacto -->
+    <section id="contacto" class="py-20 px-6 md:px-20 bg-gray-900">
+        <!-- Título -->
+        <h2 class="text-3xl font-bold mb-12 text-center text-white" data-aos="fade-up">Contacto</h2>
+
+        <!-- Contenido en dos columnas -->
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+
+            <!-- Texto -->
+            <div class="text-center md:text-left space-y-6" data-aos="fade-right">
+                <p class="text-gray-300 text-lg">
+                    ¿Lista para empezar tu carrera como <span class="text-pink-500 font-semibold">modelo webcam profesional</span>? Este es el momento perfecto para dar el primer paso hacia tu independencia financiera y personal.
+                </p>
+                <p class="text-gray-400">
+                    En nuestra agencia tendrás el respaldo de un equipo especializado, espacios seguros y la mejor tecnología para que trabajes con confianza.
+                    <br>
+                    <br> Escríbenos y descubre cómo podemos ayudarte a construir tu futuro.
+                </p>
+
+                <!-- Botón WhatsApp al final -->
+                <a href="https://wa.me/573118782505" target="_blank" class="bg-green-500 hover:bg-green-600 px-8 py-4 rounded-full font-semibold text-white shadow-lg transition inline-block mt-6">
         Escríbenos por WhatsApp
       </a>
-    </div>
+            </div>
 
-     <!-- Sedes -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6" data-aos="fade-left">
-      
-      <!-- Tarjeta de sede -->
-      <div class="bg-gray-800 p-6 rounded-2xl shadow-md flex items-center space-x-4">
-        <i class="fas fa-map-marker-alt text-pink-500 text-2xl"></i>
-        <span class="text-white text-lg">Teusaquillo - Esmeralda</span>
-      </div>
+            <!-- Sedes -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6" data-aos="fade-left">
 
-      <div class="bg-gray-800 p-6 rounded-2xl shadow-md flex items-center space-x-4">
-        <i class="fas fa-map-marker-alt text-pink-500 text-2xl"></i>
-        <span class="text-white text-lg">Teusaquillo - Galerías</span>
-      </div>
+                <!-- Tarjeta de sede -->
+                <div class="bg-gray-800 p-6 rounded-2xl shadow-md flex items-center space-x-4">
+                    <i class="fas fa-map-marker-alt text-pink-500 text-2xl"></i>
+                    <span class="text-white text-lg">Teusaquillo - Esmeralda</span>
+                </div>
 
-      <div class="bg-gray-800 p-6 rounded-2xl shadow-md flex items-center space-x-4">
-        <i class="fas fa-map-marker-alt text-pink-500 text-2xl"></i>
-        <span class="text-white text-lg">Engativá - Bonanza</span>
-      </div>
+                <div class="bg-gray-800 p-6 rounded-2xl shadow-md flex items-center space-x-4">
+                    <i class="fas fa-map-marker-alt text-pink-500 text-2xl"></i>
+                    <span class="text-white text-lg">Teusaquillo - Galerías</span>
+                </div>
 
-      <div class="bg-gray-800 p-6 rounded-2xl shadow-md flex items-center space-x-4">
-        <i class="fas fa-map-marker-alt text-pink-500 text-2xl"></i>
-        <span class="text-white text-lg">Engativá - Normandía</span>
-      </div>
+                <div class="bg-gray-800 p-6 rounded-2xl shadow-md flex items-center space-x-4">
+                    <i class="fas fa-map-marker-alt text-pink-500 text-2xl"></i>
+                    <span class="text-white text-lg">Engativá - Bonanza</span>
+                </div>
 
-    </div>
+                <div class="bg-gray-800 p-6 rounded-2xl shadow-md flex items-center space-x-4">
+                    <i class="fas fa-map-marker-alt text-pink-500 text-2xl"></i>
+                    <span class="text-white text-lg">Engativá - Normandía</span>
+                </div>
 
-
-  </div>
-</section>
+            </div>
 
 
-  <!-- Footer -->
-<!-- Footer Mejorado -->
-<footer class="bg-gray-950 text-gray-400 py-12">
-  <div class="max-w-6xl mx-auto px-6 md:px-0 grid md:grid-cols-3 gap-8 text-center md:text-left">
-    
-    <!-- Sección Redes Sociales -->
-    <div>
-      <h4 class="text-white font-bold mb-4">Síguenos</h4>
-      <div class="flex justify-center md:justify-start space-x-4">
-        <a href="#" class="hover:text-pink-500 transition"><i class="fab fa-facebook-f fa-lg"></i></a>
-        <a href="#" class="hover:text-pink-500 transition"><i class="fab fa-instagram fa-lg"></i></a>
-        <a href="#" class="hover:text-pink-500 transition"><i class="fab fa-twitter fa-lg"></i></a>
-        <a href="#" class="hover:text-pink-500 transition"><i class="fab fa-tiktok fa-lg"></i></a>
-      </div>
-    </div>
-
-    <!-- Sección Contacto -->
-    <div>
-      <h4 class="text-white font-bold mb-4">Contáctanos</h4>
-      <p><i class="fas fa-envelope mr-2"></i> contacto@herahousestudio.com</p>
-      <p><i class="fas fa-phone mr-2"></i> +57 311 878 2505</p>
-      <p><i class="fas fa-map-marker-alt mr-2"></i> Bogotá, Colombia</p>
-    </div>
-
-    <!-- Sección Legal -->
-    <div>
-      <h4 class="text-white font-bold mb-4">Legal</h4>
-      <p>© 2025 Hera House Studio. Todos los derechos reservados.</p>
-      <p class="mt-2 text-gray-500 text-sm">
-        Las modelos deben ser mayores de edad y cumplir con los requisitos legales de la industria de entretenimiento para adultos.  
-        <a href="#" class="text-pink-500 hover:underline">Política de privacidad</a> | 
-        <a href="#" class="text-pink-500 hover:underline">Términos y condiciones</a>
-      </p>
-    </div>
-
-  </div>
-</footer>
+        </div>
+    </section>
 
 
-  <!-- Botón flotante WhatsApp -->
-  <a href="https://wa.me/573118782505" target="_blank" class="whatsapp-btn">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" width="30" height="30">
-      <path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.3 5.443 0 12.063 0c3.184 0 6.167 1.24 8.413 3.488a11.82 11.82 0 013.489 8.414c-.003 6.62-5.386 11.903-12.006 11.903a11.95 11.95 0 01-6.104-1.662L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.593 5.448.003 9.886-4.428 9.889-9.877.002-5.462-4.415-9.89-9.881-9.892-5.456-.002-9.89 4.418-9.892 9.884a9.84 9.84 0 001.747 5.568l-.999 3.648 3.744-.976zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.074-.149-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.793.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/>
-    </svg>
-  </a>
+    <!-- Footer -->
+    <!-- Footer Mejorado -->
+    <footer class="bg-gray-950 text-gray-400 py-12">
+        <div class="max-w-6xl mx-auto px-6 md:px-0 grid md:grid-cols-3 gap-8 text-center md:text-left">
 
-  <script>
-    AOS.init({ duration: 1000, once: true });
-    window.addEventListener('scroll', function() {
-      const nav = document.getElementById('navbar');
-      if (window.scrollY > 50) {
-        nav.classList.add('scrolled');
-      } else {
-        nav.classList.remove('scrolled');
-      }
-    });
-  </script>
+            <!-- Sección Redes Sociales -->
+            <div>
+                <h4 class="text-white font-bold mb-4">Síguenos</h4>
+                <div class="flex justify-center md:justify-start space-x-4">
+                    <a href="#" class="hover:text-pink-500 transition"><i class="fab fa-facebook-f fa-lg"></i></a>
+                    <a href="#" class="hover:text-pink-500 transition"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="#" class="hover:text-pink-500 transition"><i class="fab fa-twitter fa-lg"></i></a>
+                    <a href="#" class="hover:text-pink-500 transition"><i class="fab fa-tiktok fa-lg"></i></a>
+                </div>
+            </div>
+
+            <!-- Sección Contacto -->
+            <div>
+                <h4 class="text-white font-bold mb-4">Contáctanos</h4>
+                <p><i class="fas fa-envelope mr-2"></i> contacto@herahousestudio.com</p>
+                <p><i class="fas fa-phone mr-2"></i> +57 311 878 2505</p>
+                <p><i class="fas fa-map-marker-alt mr-2"></i> Bogotá, Colombia</p>
+            </div>
+
+            <!-- Sección Legal -->
+            <div>
+                <h4 class="text-white font-bold mb-4">Legal</h4>
+                <p>© 2025 Hera House Studio. Todos los derechos reservados.</p>
+                <p class="mt-2 text-gray-500 text-sm">
+                    Las modelos deben ser mayores de edad y cumplir con los requisitos legales de la industria de entretenimiento para adultos.
+                    <a href="#" class="text-pink-500 hover:underline">Política de privacidad</a> |
+                    <a href="#" class="text-pink-500 hover:underline">Términos y condiciones</a>
+                </p>
+            </div>
+
+        </div>
+    </footer>
+
+
+    <!-- Botón flotante WhatsApp -->
+    <a href="https://wa.me/573118782505" target="_blank" class="whatsapp-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" width="30" height="30">
+            <path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.3 5.443 0 12.063 0c3.184 0 6.167 1.24 8.413 3.488a11.82 11.82 0 013.489 8.414c-.003 6.62-5.386 11.903-12.006 11.903a11.95 11.95 0 01-6.104-1.662L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.593 5.448.003 9.886-4.428 9.889-9.877.002-5.462-4.415-9.89-9.881-9.892-5.456-.002-9.89 4.418-9.892 9.884a9.84 9.84 0 001.747 5.568l-.999 3.648 3.744-.976zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.074-.149-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.793.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"
+            />
+        </svg>
+    </a>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+          const menu = document.getElementById('menu');
+        
+          menuBtn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+          });
+    </script>
+
+
+    <script>
+        AOS.init({ duration: 1000, once: true });
+        window.addEventListener('scroll', function() {
+          const nav = document.getElementById('navbar');
+          if (window.scrollY > 50) {
+            nav.classList.add('scrolled');
+          } else {
+            nav.classList.remove('scrolled');
+          }
+        });
+    </script>
 </body>
+
 </html>
