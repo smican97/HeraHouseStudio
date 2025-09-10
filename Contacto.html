@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hera House Studio - Contacto</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+  body { font-family: 'Poppins', sans-serif; background: #111; color: #fff; overflow-x:hidden; }
+  .navbar { transition: background 0.3s; }
+  .scrolled { background: rgba(0,0,0,0.9) !important; }
+  .whatsapp-btn {
+    position: fixed; bottom: 20px; right: 20px;
+    background: #25D366; color: white; border-radius: 50%;
+    width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 50; transition: transform 0.2s;
+  }
+  .whatsapp-btn:hover { transform: scale(1.1); }
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav id="navbar" class="fixed w-full top-0 left-0 z-40 navbar bg-transparent">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+    <a href="index.html" class="flex items-center space-x-3">
+      <img src="logo.png" alt="Hera House Studio" class="h-10 w-auto">
+      <span class="text-xl font-bold">HeraHouseStudio</span>
+    </a>
+    <ul class="hidden md:flex space-x-6 font-medium">
+      <li><a href="Index.html" class="hover:text-pink-500">Inicio</a></li>
+      <li><a href="QuienesSomos.html" class="hover:text-pink-500">Nosotros</a></li>
+      <li><a href="beneficios.html" class="hover:text-pink-500">Beneficios</a></li>
+      <li><a href="index.html#aplica" class="hover:text-pink-500">Proceso</a></li>
+      <li><a href="index.html#testimonios" class="hover:text-pink-500">Testimonios</a></li>
+      <li><a href="index.html#faq" class="hover:text-pink-500">FAQ</a></li>
+      <li><a href="Contacto.html" class="hover:text-pink-500">Contacto</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero Contacto -->
+<section class="pt-28 pb-12 px-6 md:px-20 text-center" data-aos="fade-up">
+  <h1 class="text-5xl md:text-6xl font-bold mb-4">Contáctanos</h1>
+  <p class="text-gray-400 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+  ¿Tienes dudas, sugerencias o quieres contarnos algo? Escríbenos y nuestro equipo te responderá rápidamente para que tu experiencia con Hera House Studio sea increíble.
+  </p>
+</section>
+
+<!-- Sección Contacto -->
+<section class="py-12 px-6 md:px-20">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
+
+    <!-- Datos de contacto -->
+<!-- Carrusel de imágenes -->
+<!-- Carrusel de imágenes sin botones -->
+<div data-aos="fade-right" class="flex relative h-full rounded-2xl shadow-lg overflow-hidden">
+
+  <!-- Mensaje sobre la imagen -->
+  <div class="absolute bottom-0 left-0 w-full bg-black/60 p-6 text-center z-20">
+    <h2 class="text-2xl md:text-4xl font-bold text-white drop-shadow-lg">¡Disfruta y descubre Hera House Studio!</h2>
+    <p class="text-md md:text-lg text-white drop-shadow-md mt-1">Tu experiencia comienza aquí, vive la mejor experiencia con nosotros.</p>
+  </div>
+
+  <!-- Imágenes -->
+  <img src="https://img.freepik.com/foto-gratis/mujer-joven-disfrutando-verano_23-2149428487.jpg" 
+       alt="Contacto 2" class="w-full h-full object-cover absolute top-0 left-0 opacity-0 transition-opacity duration-700" />
+  <img src="https://webcamexperience.com.co/assets/images/whatsapp-image-2021-11-07-at-12.03.19-pm.webp" 
+       alt="Contacto 1" class="w-full h-full object-cover absolute top-0 left-0 opacity-100 transition-opacity duration-700" />
+  <img src="https://img.freepik.com/foto-gratis/mujer-jugando-al-ping-pong-playa_23-2147813386.jpg" 
+       alt="Contacto 3" class="w-full h-full object-cover absolute top-0 left-0 opacity-0 transition-opacity duration-700" />
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const slides = document.querySelectorAll('[data-aos="fade-right"] img');
+  let current = 0;
+
+  function showSlide(index) {
+    slides.forEach((slide,i)=> {
+      slide.classList.toggle('opacity-100', i === index);
+      slide.classList.toggle('opacity-0', i !== index);
+    });
+  }
+
+  // Cambio automático cada 5 segundos
+  setInterval(() => {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+  }, 5000);
+
+  // Inicializamos
+  showSlide(current);
+});
+</script>
+
+
+<style>
+  @keyframes fade-in {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-in {
+    animation: fade-in 1s ease-out forwards;
+  }
+</style>
+
+
+<!-- Formulario -->
+<!-- Formulario -->
+<div data-aos="fade-left" class="flex">
+  <form class="bg-gray-800 p-8 rounded-2xl shadow-lg space-y-6" enctype="multipart/form-data" autocomplete="off">
+
+    <div class="grid md:grid-cols-2 gap-4">
+      <div>
+        <label class="block mb-2 font-normal" for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" class="w-full p-3 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-pink-500" required>
+      </div>
+      <div>
+        <label class="block mb-2 font-normal" for="apellido">Apellido</label>
+        <input type="text" id="apellido" name="apellido" placeholder="Tu apellido" class="w-full p-3 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-pink-500" required>
+      </div>
+    </div>
+
+    <div>
+      <label class="block mb-2 font-normal" for="como_conociste">¿Cómo conociste Hera House Studio?</label>
+      <input type="text" id="como_conociste" name="como_conociste" placeholder="Escribe aquí" class="w-full p-3 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-pink-500" required>
+    </div>
+
+    <div>
+      <label class="block mb-2 font-normal" for="mayor_edad">¿Eres mayor de edad?</label>
+      <select id="mayor_edad" name="mayor_edad" class="w-full p-3 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-pink-500" required>
+        <option value="">Selecciona</option>
+        <option value="si">Sí</option>
+        <option value="no">No</option>
+      </select>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-4">
+      <div>
+        <label class="block mb-2 font-normal" for="email">Correo electrónico</label>
+        <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" class="w-full p-3 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-pink-500" required>
+      </div>
+      <div>
+        <label class="block mb-2 font-normal" for="telefono">Teléfono</label>
+        <input type="tel" id="telefono" name="telefono" placeholder="+57 3XX XXX XXXX" class="w-full p-3 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-pink-500" required>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-4">
+      <div>
+        <label class="block mb-2 font-normal" for="experiencia">Experiencia</label>
+        <select id="experiencia" name="experiencia" class="w-full p-3 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-pink-500">
+          <option value="">Selecciona</option>
+          <option value="si">Sí</option>
+          <option value="no">No</option>
+        </select>
+      </div>
+      <div>
+        <label class="block mb-2 font-normal" for="sede">Sede de tu interés</label>
+        <select id="sede" name="sede" class="w-full p-3 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-pink-500">
+          <option value="">Selecciona</option>
+          <option value="Teusaquillo - Esmeralda">Teusaquillo - Esmeralda</option>
+          <option value="Teusaquillo - Galerias">Teusaquillo - Galerias</option>
+          <option value="Engativa - Bonanza">Engativa - Bonanza</option>
+          <option value="Engativa - Normandia">Engativa - Normandia</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-4">
+      <div>
+        <label class="block mb-2 font-normal" for="foto_rostro">Foto de rostro</label>
+        <input type="file" id="foto_rostro" name="foto_rostro" accept="image/*" class="w-full p-2 rounded bg-gray-700 text-white" onchange="previewImage(event,'previewRostro')" required>
+        <img id="previewRostro" class="img-preview hidden mt-2 rounded-lg">
+      </div>
+      <div>
+        <label class="block mb-2 font-normal" for="foto_cuerpo">Foto de cuerpo completo</label>
+        <input type="file" id="foto_cuerpo" name="foto_cuerpo" accept="image/*" class="w-full p-2 rounded bg-gray-700 text-white" onchange="previewImage(event,'previewCuerpo')" required>
+        <img id="previewCuerpo" class="img-preview hidden mt-2 rounded-lg">
+      </div>
+    </div>
+
+    <div>
+      <label class="block mb-2 font-normal" for="mensaje">Mensaje</label>
+      <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje" class="w-full p-3 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-pink-500" required></textarea>
+    </div>
+
+    <button type="submit" class="bg-pink-500 w-full py-3 rounded font-semibold text-white hover:opacity-90 transition">Enviar mensaje</button>
+  </form>
+</div>
+
+
+<script>
+function previewImage(event, id) {
+  const reader = new FileReader();
+  reader.onload = function(){
+    const output = document.getElementById(id);
+    output.src = reader.result;
+    output.classList.remove('hidden');
+  };
+  reader.readAsDataURL(event.target.files[0]);
+}
+</script>
+
+
+  </div>
+</section>
+
+<!-- Mapa -->
+<section class="py-4 px-3 md:px-10" data-aos="fade-up">
+  <div class="max-w-6xl mx-auto">
+   
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-950 text-gray-400 py-12">
+  <div class="max-w-6xl mx-auto px-6 md:px-0 grid md:grid-cols-3 gap-8 text-center md:text-left">
+    
+    <div>
+      <h4 class="text-white font-bold mb-4">Síguenos</h4>
+      <div class="flex justify-center md:justify-start space-x-4">
+        <a href="#" class="hover:text-pink-500 transition"><i class="fab fa-facebook-f fa-lg"></i></a>
+        <a href="#" class="hover:text-pink-500 transition"><i class="fab fa-instagram fa-lg"></i></a>
+        <a href="#" class="hover:text-pink-500 transition"><i class="fab fa-twitter fa-lg"></i></a>
+        <a href="#" class="hover:text-pink-500 transition"><i class="fab fa-tiktok fa-lg"></i></a>
+      </div>
+    </div>
+
+    <div>
+      <h4 class="text-white font-bold mb-4">Contáctanos</h4>
+      <p><i class="fas fa-envelope mr-2"></i> contacto@herahousestudio.com</p>
+      <p><i class="fas fa-phone mr-2"></i> +57 311 878 2505</p>
+      <p><i class="fas fa-map-marker-alt mr-2"></i> Bogotá, Colombia</p>
+    </div>
+
+    <div>
+      <h4 class="text-white font-bold mb-4">Legal</h4>
+      <p>© 2025 Hera House Studio. Todos los derechos reservados.</p>
+      <p class="mt-2 text-gray-500 text-sm">
+        <a href="#" class="text-pink-500 hover:underline">Política de privacidad</a> | 
+        <a href="#" class="text-pink-500 hover:underline">Términos y condiciones</a>
+      </p>
+    </div>
+
+  </div>
+</footer>
+
+<!-- WhatsApp flotante -->
+<a href="https://wa.me/573118782505" target="_blank" class="whatsapp-btn">
+  <i class="fab fa-whatsapp fa-lg"></i>
+</a>
+
+<script>
+  AOS.init({ duration: 1000, once: true });
+  window.addEventListener('scroll', function() {
+    const nav = document.getElementById('navbar');
+    if (window.scrollY > 50) { nav.classList.add('scrolled'); }
+    else { nav.classList.remove('scrolled'); }
+  });
+</script>
+
+<script>
+const slides = document.querySelectorAll('[data-aos="fade-right"] img');
+let current = 0;
+
+document.getElementById('next').addEventListener('click', () => {
+  slides[current].classList.remove('opacity-100');
+  slides[current].classList.add('opacity-0');
+  current = (current + 1) % slides.length;
+  slides[current].classList.remove('opacity-0');
+  slides[current].classList.add('opacity-100');
+});
+
+document.getElementById('prev').addEventListener('click', () => {
+  slides[current].classList.remove('opacity-100');
+  slides[current].classList.add('opacity-0');
+  current = (current - 1 + slides.length) % slides.length;
+  slides[current].classList.remove('opacity-0');
+  slides[current].classList.add('opacity-100');
+});
+</script>
+
+<script>
+const slides = document.querySelectorAll('[data-aos="fade-right"] img');
+let current = 0;
+
+// Función para mostrar la imagen actual
+function showSlide(index) {
+  slides.forEach((slide,i)=> {
+    slide.classList.toggle('opacity-100', i === index);
+    slide.classList.toggle('opacity-0', i !== index);
+  });
+}
+
+// Botones manuales
+document.getElementById('next').addEventListener('click', () => {
+  current = (current + 1) % slides.length;
+  showSlide(current);
+});
+document.getElementById('prev').addEventListener('click', () => {
+  current = (current - 1 + slides.length) % slides.length;
+  showSlide(current);
+});
+
+// Cambio automático cada 5 segundos
+setInterval(() => {
+  current = (current + 1) % slides.length;
+  showSlide(current);
+}, 7000);
+
+// Inicializamos la primera imagen
+showSlide(current);
+</script>
+
+
+</body>
+</html>
